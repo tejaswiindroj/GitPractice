@@ -11,3 +11,12 @@ tomcat7 (yum install tomcat)
 http://ftp-nyc.osuosl.org/pub/jenkins/war-stable/2.190.3/jenkins.war
 
 /usr/local/Cellar/tomcat/9.0.29/libexec/webapps/   (Tomcat destination in local mac)
+
+ansible -b localhost -m yum -a "name=git"
+
+git checkout "branchname"    -- For chenaging the branch
+git merge "branch which you want to get files from to another branch"
+example :
+   git checkout master
+   git merge sprint1
+   git push 
