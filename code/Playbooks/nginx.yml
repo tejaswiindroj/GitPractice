@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install nginx server
+    yum:
+     name: nginx
+     state: started
+  
