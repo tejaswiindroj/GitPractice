@@ -24,3 +24,5 @@ example :
 
    git fetch
 git reset --hard origin/master
+
+ansible -b localhost -m yum -a "name=git"    --- installing git in ansible
