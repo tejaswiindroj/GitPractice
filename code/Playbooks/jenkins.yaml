@@ -9,7 +9,6 @@
   - name: Install tomcat 8
     yum:
       name: tomcat 
-      version: 7.0.23.0
       state: present
   - name: download install jenkins to webapps/
     get_url:
