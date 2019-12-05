@@ -13,7 +13,7 @@
   - name: download install jenkins to webapps/
     get_url:
       url: http://ftp-nyc.osuosl.org/pub/jenkins/war-stable/2.190.3/jenkins.war
-      dest: /usr/local/Cellar/tomcat/9.0.29/libexec/webapps/jenkins.war 
+      dest: /usr/share/tomcat/webapps
   - name: enable and start tomcat
     service:
       name: tomcat
