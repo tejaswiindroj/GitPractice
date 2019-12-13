@@ -6,6 +6,12 @@
     yum:
       name: java-1.8.0-openjdk.x86_64
       state: present
+  - name: just checking group varibales
+    debug:
+      msg: "{{log_folder}}"
+  - name: just checking hosts vars
+    debug:
+      msg: "{{check_command}}"
   - name: Install Tomcat
     get_url:
       url: http://mirror.reverse.net/pub/apache/tomcat/tomcat-9/v9.0.29/bin/apache-tomcat-9.0.29.tar.gz
