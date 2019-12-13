@@ -1,0 +1,70 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+yum update
+yum install wget
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+ls
+rpm -i epel-release-latest-8.noarch.rpm
+yum install ansible
+ansible --version
+adduser ansible
+passwd ansible
+visudo
+root ALL=(ALL) ALL
+ansible ALL=(ALL) NOPASSWD:ALL
+vi /etc/ssh/sshd_config
+comment passwd authentication no
+uncomment passwd authentication yes
+service sshd restart
+exit
+su ansible
+pwd (should get this /home/ansible)
+cd /home/ansible
+ls
+--- in root
+sudo mv hosts hosts.original
+vi hosts  --- /etc/ansible
+localhost  -- save and close
+ansible -m ping ALL
+ssh-keygen
+ssh-copy-id localhost
+ssh localhost
+ansible -m ping all
+--add new hosts
+cd /etc/ansible
+vi hosts
+add new hosts -- ip private dns
+ssh-copy-id ip-172-31-23-26.us-east-2.compute.internal
+cat hosts
+ansible -m ping all
+
+
+
+----Tomcat Install---
+https://www.tecmint.com/install-apache-tomcat-in-rhel-8/
+
+|::1|0:0:0:0:0:0:0:1
+
+----Jenkins Install---
+
+https://www.linuxtechi.com/install-configure-jenkins-on-centos-7-rhel-7/
+
+https://wiki.jenkins.io/display/JENKINS/Installing+Jenkins+on+Red+Hat+distributions
+
+ssh -vvv -i "Ansible3.pem" ec2-user@ec2-13-58-130-82.us-east-2.compute.amazonaws.com
+
+
+java -jar /usr/share/tomcat9/webapps/jenkins/WEB-INF/lib/jenkins-core-1.495.jar  "TestJob" echo hello
+hello
+
+--- Filtering the server hosts facts if something goes wrong using verbosity(-v, -vv, -vvv)
+   eg: ansible-playbook -vv pingallwithfacts.yaml
+   ansible all -m setup -a 'filter=ansible_default_ipv4*'
+   ansible all -m setup -a 'filter=*ipv4*' 
+   ansible all -m setup -a 'filter=ipv4'
+   ansible all -m setup -a 'filter=ansible_user*'
+   ansible all -m setup -a 'filter=*' 
+   ansible all -m setup | more
+
+   ansible-playbook -i myhosts --list-hosts jenkins.yaml

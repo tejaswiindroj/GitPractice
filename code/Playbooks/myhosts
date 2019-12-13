@@ -3,3 +3,6 @@ ip-172-31-23-26.us-east-2.compute.internal
 
 [local]
 localhost
+
+[webserver]
+ip-172-31-23-26.us-east-2.compute.internal
