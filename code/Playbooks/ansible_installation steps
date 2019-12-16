@@ -70,3 +70,7 @@ hello
    ansible-playbook -i myhosts --list-hosts jenkins.yaml
 
    vim -r webserver-playbook.yaml
+
+   ansible-playbook otherapache.yml --tags "debug"
+ 
+   ansible-playbook otherapache.yml --skip-tags "install"
