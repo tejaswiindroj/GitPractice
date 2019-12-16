@@ -1,0 +1,8 @@
+- hosts: localhost
+  become: yes
+  tasks:
+  - name: Install apache server
+    yum:
+      name: httpd
+      state: present
+    when: not ansible_os_family == "RedHat"

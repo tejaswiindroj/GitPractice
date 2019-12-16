@@ -6,3 +6,5 @@
     yum:
       name: "{{webserver_package}}"
       state: present
+  - debug:
+      msg: "{{webserver_package}}"
