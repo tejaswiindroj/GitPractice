@@ -68,3 +68,5 @@ hello
    ansible all -m setup | more
 
    ansible-playbook -i myhosts --list-hosts jenkins.yaml
+
+   vim -r webserver-playbook.yaml

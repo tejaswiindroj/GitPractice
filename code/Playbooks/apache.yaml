@@ -9,5 +9,5 @@
   - name: Ensure Apache service is running
     service:
       name: httpd
-      state: started
-      enabled: yes    
+      state: present
+    when: ansible_os_family == "RedHat"  
